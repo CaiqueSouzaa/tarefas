@@ -1,0 +1,7 @@
+#Tarefas
+
+* Criar tarefas
+* Criar tarefas de tarefas
+* Adicionar status
+* Adicionar comentários
+* Finalizar a tarefa
