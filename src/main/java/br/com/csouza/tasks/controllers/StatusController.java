@@ -17,7 +17,7 @@ import br.com.csouza.tasks.entities.dto.status.UpdateStatusDTO;
 import br.com.csouza.tasks.services.StatusService;
 
 @RestController()
-@RequestMapping("status")
+@RequestMapping(AppRoutes.status)
 public class StatusController {
 	private StatusService statusService;
 	

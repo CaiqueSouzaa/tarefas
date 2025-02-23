@@ -17,7 +17,7 @@ import br.com.csouza.tasks.entities.dto.task.UpdateTaskDTO;
 import br.com.csouza.tasks.services.TaskService;
 
 @RestController()
-@RequestMapping("tasks")
+@RequestMapping(AppRoutes.tasks)
 public class TaskController {
 	private TaskService taskService;
 	

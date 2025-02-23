@@ -20,7 +20,7 @@ import br.com.csouza.tasks.interfaces.services.IService;
  * @version 0.1
  */
 public abstract class Service<T extends DatabaseEntity> implements IService<T> {
-	protected IRepository<T> repository;
+	private IRepository<T> repository;
 	
 	public Service(IRepository<T> repository) {
 		this.repository = repository;

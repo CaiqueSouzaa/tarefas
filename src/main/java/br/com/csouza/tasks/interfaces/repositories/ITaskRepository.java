@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import br.com.csouza.tasks.entities.Task;
 
 /**
- * Repositorio da entidade Task.
+ * Interface responsável por fornecer os métodos de repositório da entidade Task.
  * 
  * @author Caique Souza
  * @version 0.1

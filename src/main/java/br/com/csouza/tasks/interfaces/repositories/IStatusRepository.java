@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import br.com.csouza.tasks.entities.Status;
 
 /**
- * Repositorio da entidade Status.
+ * Interface responsável por fornecer os métodos de repositório da entidade Status.
  * 
  * @author Caique Souza
  * @version 0.1
