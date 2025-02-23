@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.csouza.tasks.entities.Task;
-import br.com.csouza.tasks.entities.dto.StoreTaskDTO;
-import br.com.csouza.tasks.entities.dto.UpdateTaskDTO;
+import br.com.csouza.tasks.entities.dto.task.StoreTaskDTO;
+import br.com.csouza.tasks.entities.dto.task.UpdateTaskDTO;
 import br.com.csouza.tasks.services.TaskService;
 
 @RestController()
@@ -31,22 +31,22 @@ public class TaskController {
 	}
 	
 	@GetMapping("")
-	public Page<Task> index(@RequestParam(value = "page", defaultValue = "0") String page, @RequestParam(value = "size", defaultValue = "10") String size) {
+	public Page<Task> index(@RequestParam(defaultValue = "0") String page, @RequestParam(defaultValue = "10") String size) {
 		return this.taskService.index(Integer.parseInt(page), Integer.parseInt(size));
 	}
 	
 	@GetMapping("{id}")
-	public Task show(@PathVariable(name = "id") String id) {
+	public Task show(@PathVariable String id) {
 		return this.taskService.show(Integer.parseInt(id));
 	}
 	
 	@PutMapping("{id}")
-	public Task update(@PathVariable(name = "id") String id, @RequestBody() UpdateTaskDTO task) {
+	public Task update(@PathVariable String id, @RequestBody() UpdateTaskDTO task) {
 		return this.taskService.update(Integer.parseInt(id), task);
 	}
 	
 	@DeleteMapping("{id}")
-	public void destroy(@PathVariable(name = "id") String id) {
+	public void destroy(@PathVariable String id) {
 		this.taskService.destroy(Integer.parseInt(id));
 	}
 }

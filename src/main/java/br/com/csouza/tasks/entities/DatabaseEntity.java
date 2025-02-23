@@ -9,7 +9,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
-import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,9 +26,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @MappedSuperclass()
 public abstract class DatabaseEntity {
-	@Id()
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sq_tasks")
-	@SequenceGenerator(name = "sq_tasks", sequenceName = "sq_id_tasks", initialValue = 1, allocationSize = 1)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	@Column(name = "created_at", nullable = false)

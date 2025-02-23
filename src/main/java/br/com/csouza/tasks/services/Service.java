@@ -25,9 +25,21 @@ public abstract class Service<T extends DatabaseEntity> implements IService<T> {
 	public Service(IRepository<T> repository) {
 		this.repository = repository;
 	}
+	
+	/**
+	 * Método abstrato para verificar se os campos da entidade são válidos para seguir com o registro.
+	 * 
+	 * @param entity Entidade a ter seus campos verificados.
+	 * @return true: Válido, false: Não válido.
+	 */
+	protected abstract void isValidStore(T entity);
 
 	@Override
 	public T store(DTO<T> entity) {
+		this.isValidStore(entity.toEntity());
+		
+		System.out.println(entity);
+		
 		return this.repository.save(entity.toEntity());
 	}
 
